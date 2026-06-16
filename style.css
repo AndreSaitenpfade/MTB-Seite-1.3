@@ -1,0 +1,469 @@
+/* Stellt sicher, dass kein Element jemals breiter als der Bildschirm ist */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Verhindert seitliches Scrollen */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* Video/Bilder zwingend in den Rahmen einpassen */
+img, video, iframe {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+
+
+/* Globale Styles & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.support-btn {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    background-color: #d4af37; /* Gold-Ton */
+    color: #0d0d0d;
+    padding: 12px 20px;
+    border-radius: 50px; /* Macht den Button oval/rund */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000; /* Stellt sicher, dass er über allen anderen Elementen liegt */
+    transition: background-color 0.3s ease;
+}
+
+.support-btn:hover {
+    background-color: #ffffff; /* Farbe beim Drüberfahren */
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #0d0d0d; /*Dunkel */
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+/* Die obere Ankündigungsleiste */
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0d0d0d; /* Tiefes Schwarz */
+    color: #d4af37; /*  */
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    
+    z-index: 100; /* Stellt sicher, dass die Leiste über allem anderen liegt */
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* Header & Navigation als getrennte Buttons */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    position: absolute;
+
+    /* ÄNDERUNG HIER: Statt top: 0 setzen wir es unter die Bar (ca. 35px von oben) */
+    top: 25px;
+
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0));
+}
+
+.logo img {
+    height: 50px !important; 
+    width: auto !important;
+    display: block;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px; /* Erzwingt sauberen Abstand zwischen den Buttons */
+}
+
+/* Styling für die einzelnen Navigations-Buttons */
+.nav-btn {
+    display: inline-block;
+    color: #ffffff !important; /* Verhindert das lila/blau vom Browser */
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Dezenter Button-Hintergrund */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Hover-Effekt für die Buttons */
+.nav-btn:hover {
+    background-color: #d4af37; /* Markantes Trail-Rot */
+    border-color: #d4af37;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* Hero Section mit funktionierendem Video */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.45; /* Perfekt balanciert für Sichtbarkeit und Text-Lesbarkeit */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #d4af37;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #d4af37;
+    transform: scale(1.05);
+}
+
+/* Produkt-Grid */
+.products-section {
+    padding: 100px 5%;
+    background-color: #121212;
+}
+
+.products-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    border-left: 5px solid #d4af37;
+    padding-left: 15px;
+    letter-spacing: 1px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #262626;
+    transition: all 0.3s ease;
+}
+/* umrandung der produkte */
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.product-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover; /* Schneidet das Bild perfekt zu, kein Verzerren */
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.product-card .price {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #d4af37;
+}
+
+/* Professionelle Athleten-Sektion */
+.athletes-section {
+    padding: 100px 5%;
+    background-color: #0d0d0d;
+}
+
+.athletes-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    border-left: 5px solid #d4af37;
+    padding-left: 15px;
+}
+
+.athlete-container {
+    display: flex;
+    justify-content: center;
+}
+
+.athlete-card {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.athlete-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.athlete-card:hover .athlete-image-wrapper img {
+    transform: scale(1.03);
+}
+
+.athlete-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+}
+
+.athlete-info h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.athlete-info .role {
+    color: #ff3333;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #050505;
+    padding: 50px 5%;
+    text-align: center;
+    border-top: 1px solid #111;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #ffffff !important;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.social-links  a img {
+    width: 30px !important; /* Hier  Größe in Pixeln anpassen */
+    height: auto; /* Sorgt dafür, dass das Seitenverhältnis erhalten bleibt */
+    vertical-align: middle; /* Richtet das Bild schön mittig zum Text aus */
+}
+
+.social-links a:hover {
+    color: #d4af37 !important;
+}
+
+#contact-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 320px;
+    background: #1a1a1a; /* Dunkler Hintergrund */
+    color: #ffffff;      /* Helle Schrift */
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333; /* Dezenter Rahmen */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 2000;
+}
+
+#contact-modal h3 { margin-top: 0; color: #d4af37; } /* Goldene Überschrift */
+
+#contact-modal input,
+#contact-modal textarea {
+    width: 100%;
+    background: #0d0d0d; /* Dunkle Felder */
+    color: white;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+#contact-modal button {
+    background: #d4af37; /* Goldener Button */
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#contact-modal button[onclick="closeForm()"] {
+    background: #444; /* Schließen-Button etwas dunkler */
+    color: white;
+}
+
+/* Styling für den Kreis um das Fragezeichen */
+.support-icon {
+    display: inline-block;
+    width: 24px;       /* Größe des Kreises */
+    height: 24px;
+    line-height: 22px; /* Zentriert das ? vertikal */
+    text-align: center;
+    border: 2px solid #0d0d0d; /* Dunkler Rand passend zum Gold-Button */
+    border-radius: 50%;       /* Macht das Span zum Kreis */
+    color: #0d0d0d;           /* Farbe des Fragezeichens */
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 8px;        /* Abstand zum Text "Support" */
+}
+
+
+/* Verhindert, dass Elemente den Bildschirm sprengen */
+img, video, .hero-section {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden; /* Versteckt den Scrollbalken nach rechts */
+    width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+    /* 1. Header-Struktur anpassen */
+    .main-header {
+        display: flex !important;
+        flex-direction: column !important; /* Stapelt Logo und Nav übereinander */
+        align-items: center !important;    /* Zentriert alles */
+        padding: 10px !important;
+    }
+
+    /* 2. Logo etwas Platz geben */
+    .logo {
+        margin-bottom: 10px !important;
+        font-size: 1.2rem !important;
+    }
+
+    
+
+     /* Die Nav-Leiste bekommt eine Scroll-Funktion */
+    .main-nav {
+        overflow-x: auto !important;    /* Erlaubt das seitliche Wischen */
+        
+        width: 100% !important;
+        padding-bottom: 10px;           /* Platz für den Scrollbalken */
+    }
+
+    /* Damit die Buttons nebeneinander bleiben und nicht schrumpfen */
+    .main-nav ul {
+        display: inline-flex !important; /* Wichtig: inline-flex erlaubt das seitliche Scrollen */
+        flex-direction: row !important;
+        gap: 15px !important;            
+        padding: 0 15px !important;
+    }
+    h1 {
+        font-size: 2.2rem !important;      /* Etwas kleiner als Desktop */
+        
+        
+        
+        padding: 0 15px !important;        /* Abstand zum Bildschirmrand */
+        text-align: center !important;     /* Zentriert den Text */
+        width: 100% !important;            /* Nutzt den vollen Platz */
+        margin: 0 !important;              /* Entfernt störende Abstände */
+    }
+}
+
+
+
+
+
+

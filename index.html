@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium MTB Components | Core Brand</title>
+    <meta property="og:image" content="images/image0.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/core.png?">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/cssall.min.css">
+</head>
+
+<!-- Support button-->
+
+<a href="javascript:void(0)" class="support-btn" onclick="openForm()"><span class="support-icon">?</span>
+     Support
+</a>
+
+<div id="contact-modal">
+    <h3>Kontaktaufnahme</h3>
+    <form action="http://formspree.io/f/DEINE-FORM-ID" method="POST">
+        <label>Name</label>
+        <input type="text" placeholder="Dein Name" required>
+        
+        <label>E-Mail-Adresse</label>
+        <input type="email" placeholder="E-Mail" required>
+        
+        <label>Wie können wir helfen?</label>
+        <textarea rows="4" placeholder="Schreibe deine Nachricht..."></textarea>
+        
+        <label>Anhänge</label>
+        <input type="file" style="border:none; padding-left:0;">
+        
+        <button type="submit">Senden</button>
+        <button type="button" onclick="closeForm()" style="background:#ccc;">Schließen</button>
+    </form>
+</div>
+
+
+<body>
+    <div id="top"></div>
+
+    <div class="announcement-bar">
+        EU & SCHWEIZ: Kostenloser Versand ab 99,99€!
+    </div>
+
+    <!-- Header & Navigation mit Button-Design -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/core1.png" alt="Core Components Logo" style="height: 5px; width: auto;">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#products" class="nav-btn">Produkte</a></li>
+                <li><a href="#athletes" class="nav-btn">Athleten</a></li>
+                <li><a href="#events" class="nav-btn">Events</a></li>
+                <li><a href="#inside" class="nav-btn">The Lab</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section mit echtem, stabilen MTB-Hintergrundvideo -->
+    <section class="hero-section">
+        <!-- Einbindung eines funktionierenden Trail-Biking-Videos via Pexels -->
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="images/intro-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>TRAIL & PERFORMANCE.</h1>
+            <p>Präzisions-Lenker, Naben & Pedale für den harten Trail-Einsatz.</p>
+            <a href="https://www.shopify.com/at" class="btn">SHOP NOW</a>
+        </div>
+    </section>
+
+    <!-- Produkt-Vorschau -->
+    <section id="products" class="products-section">
+        <h2>Unsere Produkte</h2>
+        <div class="product-grid">
+
+            <!-- Produkt 1: Lenker -->
+            <article class="product-card">
+                <a href="https://www.shopify.com/at" target="_blank"><img src="images/image0.png" alt="MTB Carbon Cockpit Lenker"></a>
+                <h3>Trail Bar</h3>
+                <p>Maximale Kontrolle im Unterholz.</p>
+                <span class="price">149,99 €</span>
+            </article>
+
+            <!-- Produkt 2: Nabe (Hub) -->
+            <article class="product-card">
+                <a href="https://www.shopify.com/at" target="_blank"><img src="images/image1.png" alt="MTB Nabe Detailaufnahme"></a>
+                <h3>Zero-Lag Hub</h3>
+                <p>Echte CNC-gefräste Trail-Nabe mit direktem Vortrieb.</p>
+                <span class="price">289,99 €</span>
+            </article>
+
+            <!-- Produkt 3: Flat Pedal -->
+            <article class="product-card">
+                <a href="https://www.shopify.com/at" target="_blank"><img src="images/image2.png" alt="MTB Flat Pedal Pins"></a>
+                <h3>Pedals</h3>
+                <p>Aggressive Pins für maximalen Grip auf jedem Trail.</p>
+                <span class="price">14,99€</span>
+                
+            </article>
+
+            
+
+        </div>
+    </section>
+
+    <!-- Athleten-Bereich mit Bild-Präsentation -->
+    <section id="athletes" class="athletes-section">
+        <h2>The Syndicate</h2>
+        <div class="athlete-container">
+            <div class="athlete-card">
+                <div class="athlete-image-wrapper">
+
+                    <a href="https://www.instagram.com/albertolopezmtb/" target="_blank">
+                    <!-- Echtes Mountainbiker-Foto  -->
+                    <img src="images/imagelopez.png" alt="Alberto Lopez - Trail Rider"></a>
+                </div>
+                <div class="athlete-info">
+                    <h3>Alberto Lopez</h3>
+                    <p class="role">Pro Trail & Hardline Rider</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="about" class="more">
+        <h2></h2>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#top" class="nav-btn">Back</a></li>
+                <li><a href="#about" class="nav-btn">About</a></li>
+                <li><a href="#karriere" class="nav-btn">Karriere</a></li>
+                <li><a href="#retoure" class="nav-btn">Retoure</a></li>
+                <li><a href="#AGB" class="nav-btn">AGB</a></li>
+            </ul>
+        </nav>   
+        
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Core Components. Engineered for Trails.</p>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank"><img src="images/Instagram.png" alt="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><img src="images/Youtube.png" alt="Youtube"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:info@core-components.com"><img src="images/Email.png" alt="Email"><i class="fab fa-email"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
